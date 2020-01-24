@@ -5,7 +5,8 @@ import Navbar from './Navbar';
 import myBackgroundImage from './pictures/PeddleCutz2.jpg';
 
 const styles = {
-	backgroundImage: `url(${myBackgroundImage})`
+	backgroundImage: `url(${myBackgroundImage})`,
+	height: '100%'
 };
 
 export default class Booking extends Component {
@@ -29,7 +30,7 @@ export default class Booking extends Component {
 				this.setState({
 					user: null
 				});
-				this.props.history.push('/login');
+				this.props.history.push('/landing');
 			}
 		});
 	}
@@ -60,7 +61,7 @@ export default class Booking extends Component {
 
 	render() {
 		return (
-			<div styles={styles}>
+			<div style={styles}>
 				<Navbar user={this.state.user} />
 				<h1>Booking's</h1>
 				<input type="date" name="date" value={this.state.date} onChange={this.handleChange} />
@@ -92,7 +93,7 @@ export default class Booking extends Component {
 				<h1>
 					{this.state.date} {this.state.time !== '' ? 'at ' + this.state.time + ':00' : null}
 				</h1>
-				{}
+				{<input type="submit" value="submit" onclick="return Landing();" />}
 			</div>
 		);
 	}

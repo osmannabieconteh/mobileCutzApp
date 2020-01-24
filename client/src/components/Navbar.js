@@ -64,6 +64,13 @@ export default class Navbar extends Component {
 								</button>
 							) : null}
 						</form>
+						<div className="media">
+							{this.props.user ? (
+								<Link to="/media" className="nav-link">
+									Media
+								</Link>
+							) : null}
+						</div>
 					</ul>
 				</div>
 			</nav>
