@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import firebase from '../../firebase';
 import Navbar from '../../components/Navbar';
+import myBackgroundImage from '../pictures/peddlecutz3.jpg';
+
+const styles = {
+	backgroundImage: `url(${myBackgroundImage})`,
+	height: '100%'
+};
 
 export default class Register extends Component {
 	constructor(props) {
@@ -62,7 +68,7 @@ export default class Register extends Component {
 
 	render() {
 		return (
-			<div>
+			<div style={styles}>
 				<Navbar user={this.state.user} />
 				<div className="col-md-6 offset-md-3">
 					<h1>Register</h1>
