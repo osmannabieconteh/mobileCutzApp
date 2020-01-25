@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import firebase from '../firebase';
 import Booking from './Booking';
+import myBackgroundImage from './pictures/peddlecutz5.png';
+
+const styles = {
+	backgroundImage: `url(${myBackgroundImage})`,
+	height: '100%'
+};
 
 export default class Landing extends Component {
 	constructor(props) {
@@ -53,7 +59,7 @@ export default class Landing extends Component {
 
 	render() {
 		return (
-			<div>
+			<div style={styles}>
 				<Navbar user={this.state.user} />
 				<h1>My appointments</h1>
 				<div>
