@@ -15,7 +15,6 @@ export default class Register extends Component {
 			name: '',
 			email: '',
 			password: '',
-			zipcode: '',
 			user: null
 		};
 	}
@@ -25,7 +24,7 @@ export default class Register extends Component {
 		const name = this.state.name;
 		const email = this.state.email;
 		const password = this.state.password;
-		const zipcode = this.state.zipcode;
+
 		const auth = firebase.auth();
 		const database = firebase.database();
 		auth
@@ -103,16 +102,7 @@ export default class Register extends Component {
 								value={this.state.password}
 							/>
 						</div>
-						<div className="form-group">
-							<label htmlFor="zipcode">ZipCode</label>
-							<input
-								onChange={this.handleChange}
-								type="zipcode"
-								className="form-control"
-								name="zipcode"
-								value={this.state.zipcode}
-							/>
-						</div>
+
 						<input type="submit" value="Login" className="btn btn-primary btn-lg btn-block" />
 					</form>
 				</div>

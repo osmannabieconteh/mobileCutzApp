@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 import Navbar from './Navbar';
-import myBackgroundImage from './pictures/PeddleCutz2.jpg';
+import myBackgroundImage from './pictures/peddlecuts1.jpg';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,
@@ -92,7 +92,7 @@ export default class Booking extends Component {
 				<h1>
 					{this.state.date} {this.state.time !== '' ? 'at ' + this.state.time + ':00' : null}
 				</h1>
-				{<input type="submit" value="submit" onclick="return Landing();" />}
+				{<input type="submit" value="submit" onClick={this.book} />}
 			</div>
 		);
 	}
