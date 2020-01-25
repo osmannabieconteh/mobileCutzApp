@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../firebase';
 import Navbar from './Navbar';
-
 import myBackgroundImage from './pictures/PeddleCutz2.jpg';
 
 const styles = {
