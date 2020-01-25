@@ -79,6 +79,7 @@ export default class Login extends Component {
 								value={this.state.password}
 							/>
 						</div>
+
 						<input type="submit" value="Login" className="btn btn-primary btn-lg btn-block" />
 					</form>
 				</div>
