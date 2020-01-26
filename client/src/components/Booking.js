@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from '../firebase';
 import Navbar from './Navbar';
 import myBackgroundImage from './pictures/peddlecuts1.jpg';
+import axios from 'axios';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,
@@ -13,6 +14,7 @@ export default class Booking extends Component {
 		super(props);
 		this.state = {
 			user: null,
+			firebaseId: '',
 			date: '',
 			time: '',
 			times: [ '9', '10', '11', '12', '1', '2', '3', '4', '5' ]
@@ -23,7 +25,8 @@ export default class Booking extends Component {
 		firebase.auth().onAuthStateChanged((user) => {
 			if (user) {
 				this.setState({
-					user: user
+					user: user,
+					firebaseId: user.uid
 				});
 			} else {
 				this.setState({
@@ -36,12 +39,14 @@ export default class Booking extends Component {
 
 	book = (e) => {
 		e.preventDefault();
-		const database = firebase.database();
-		database.ref('/bookings').push({
-			date: this.state.date,
+
+		const newAppointment = {
 			time: this.state.time,
-			uid: this.state.user.uid
-		});
+			date: this.state.date,
+			firebaseId: this.state.firebaseId
+		};
+
+		axios.post('/api/bookings/', newAppointment).then((res) => console.log(res)).catch((err) => console.log(err));
 
 		this.props.history.push('/');
 	};

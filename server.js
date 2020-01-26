@@ -1,24 +1,25 @@
-const express = require('express');
+// Dependencies
+var express = require('express');
+var mongoose = require('mongoose');
+var logger = require('morgan');
+var path = require('path');
 
-const mongoose = require('mongoose');
-const routes = require('./routes');
-const app = express();
-const PORT = process.env.PORT || 3001;
+var app = express();
 
-// Define middleware here
+app.use(logger('dev'));
+
+// Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-}
-// Add routes, both API and view
-app.use(routes);
+// Make public a static folder
+app.use(express.static('public'));
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/reactreadinglist');
+// Routes
+// ======
+const bookings = require('./routes/api/bookings');
+app.use('/api/bookings/', bookings);
 
-// Start the API server
-app.listen(PORT, function() {
-	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+// Listen on port 3000
+app.listen(8080, function() {
+	console.log('App running on port 8080!');
 });

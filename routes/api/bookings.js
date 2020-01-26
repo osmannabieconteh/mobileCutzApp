@@ -1,10 +1,19 @@
 const router = require('express').Router();
-const bookingsController = require('../../controllers/bookingsController');
+const Appointment = require('../../models/appointment');
 
 // Matches with "/api/bookings"
-router.route('/').get(bookingsController.findAll).post(bookingsController.create);
+router.get('/', (req, res) => {
+	res.json('test');
+});
 
-// Matches with "/api/bookings/:id"
-router.route('/:id').get(bookingsController.findById).put(bookingsController.update).delete(bookingsController.remove);
+router.post('/', (req, res) => {
+	const newAppointment = new Appointment({
+		time: req.body.time,
+		date: req.body.date,
+		firebaseId: req.body.firebaseId
+	});
+
+	newAppointment.save().then((success) => res.json(success)).catch((error) => console.log(error));
+});
 
 module.exports = router;

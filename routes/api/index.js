@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bookingsRoutes = require('./bookings');
 
-// Book routes
+// Bookings routes
 router.use('/bookings', bookingsRoutes);
 
 module.exports = router;
