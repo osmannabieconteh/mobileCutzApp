@@ -1,26 +1,26 @@
 #Barbing {
-	Background-image: url("./pictures/peddlecuts1.jpg");
+	Background-image: url("./pictures/peddlecutz5.png");
 	z-index: -1;
-	font-weight: 900%;
+	font-weight: 100%;
 	height: 100%;
 }
 
 #Login {
 	Background-image: url("/peddlecuts1.jpg");
 	z-index: -1;
-	font-weight: 500%;
+	font-weight: 100%;
 	height: 100%;
 }
 #Register {
 	Background-image: url("/peddlecutz3.jpg");
 	z-index: -1;
-	font-weight: 500%;
+	font-weight: 100%;
 	height: 100%;
 }
 
 #Landing {
 	Background-image: url("/peddlecutz5.png");
 	z-index: -1;
-	font-weight: 500%;
+	font-weight: 100%;
 	height: 100%;
 }

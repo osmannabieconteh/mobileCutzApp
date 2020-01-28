@@ -28,7 +28,7 @@ export default class Register extends Component {
 		const auth = firebase.auth();
 		const database = firebase.database();
 		auth
-			.createUserWithEmailzipCodeAndPassword(email, password)
+			.createUserWithEmailAndPassword(email, password)
 			.then((res) => {
 				console.log(res);
 				database.ref('/users').push({

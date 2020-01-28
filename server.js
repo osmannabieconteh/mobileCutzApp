@@ -19,7 +19,7 @@ app.use(express.static('public'));
 const bookings = require('./routes/api/bookings');
 app.use('/api/bookings/', bookings);
 
-// Listen on port 3000
+// Listen on port 8080
 app.listen(8080, function() {
 	console.log('App running on port 8080!');
 });

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import firebase from '../firebase';
 import Booking from './Booking';
-import myBackgroundImage from './pictures/peddlecutz5.png';
+import myBackgroundImage from './pictures/peddlecutz4.jpg';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,

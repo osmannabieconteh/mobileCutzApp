@@ -33,38 +33,6 @@ export class media extends Component {
 						<h5 className="mt-0 mb-1">Quick Pick</h5>
 					</div>
 				</li>
-				<div>
-					<li className="media">
-						<img src={linesOne} alt="CoolImage" height="180" width="180" />
-						<div className="media-body">
-							<h5 className="mt-0 mb-1">Quick Pick</h5>
-						</div>
-					</li>
-					<li className="media">
-						<img src={linesTwo} alt="CoolImage" height="180" width="180" />
-						<div className="media-body">
-							<h5 className="mt-0 mb-1">Quick Pick</h5>
-						</div>
-					</li>
-					<li className="media">
-						<img src={linesThree} alt="CoolImage" height="180" width="180" />
-						<div className="media-body">
-							<h5 className="mt-0 mb-1">Quick Pick</h5>
-						</div>
-					</li>
-					<li className="media">
-						<img src={linesFour} alt="CoolImage" height="180" width="180" />
-						<div className="media-body">
-							<h5 className="mt-0 mb-1">Quick Pick</h5>
-						</div>
-					</li>
-					<li className="media">
-						<img src={linesFive} alt="CoolImage" height="180" width="180" />
-						<div className="media-body">
-							<h5 className="mt-0 mb-1">Quick Pick</h5>
-						</div>
-					</li>
-				</div>
 			</div>
 		);
 	}
