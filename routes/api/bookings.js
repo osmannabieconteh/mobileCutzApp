@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Appointment = require('../../models/appointment');
+const { findAll, create, update, remove, findById } = require('../../controllers/bookingcontroller');
 
 // Matches with "/api/bookings"
 router.get('/', (req, res) => {
@@ -15,8 +16,8 @@ router.post('/', (req, res) => {
 
 	newAppointment.save().then((success) => res.json(success)).catch((error) => console.log(error));
 });
-router.route('/').get(bookmeController.findAll).post(booksController.create);
+router.route('/').get(findAll);
 // Matches with "/api/books/:id"
-router.route('/:id').get(bookmeController.findById).put(bookmeController.update).delete(bookmeController.remove);
+router.route('/:id').get(findById).put(update).delete(remove);
 
 module.exports = router;

@@ -20,6 +20,8 @@ const bookings = require('./routes/api/bookings');
 app.use('/api/bookings/', bookings);
 
 // Listen on port 8080
-app.listen(8080, function() {
+var port = process.env.PORT || 8080;
+
+app.listen(port, function() {
 	console.log('App running on port 8080!');
 });
