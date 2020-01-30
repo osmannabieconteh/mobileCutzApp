@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
-import firebase from '../firebase';
+// import firebase from '../firebase';
 
-// import Booking from './Booking';
+import Bookings from './Bookings';
 
 import myBackgroundImage from './pictures/peddlecutz5.png';
 
@@ -33,7 +33,8 @@ export default class Landing extends Component {
 	}
 
 	listAppointments = () => {
-		const database = firebase.database();
+		axios.get('https://api/bookings');
+		// const database = firebase.database();
 		let data = [];
 		database
 			.ref('/bookings')
@@ -59,6 +60,7 @@ export default class Landing extends Component {
 			<div style={styles}>
 				<Navbar user={this.state.user} />
 				<h1>My appointments</h1>
+
 				<div>
 					{this.state.appointments.map((appointment) => {
 						return (
