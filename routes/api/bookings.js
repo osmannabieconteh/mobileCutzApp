@@ -3,9 +3,6 @@ const Appointment = require('../../models/appointment');
 const { findAll, create, update, remove, findById } = require('../../controllers/bookingcontroller');
 
 // Matches with "/api/bookings"
-router.get('/', (req, res) => {
-	res.json('test');
-});
 
 router.post('/', (req, res) => {
 	const newAppointment = new Appointment({
@@ -17,7 +14,7 @@ router.post('/', (req, res) => {
 	newAppointment.save().then((success) => res.json(success)).catch((error) => console.log(error));
 });
 router.route('/').get(findAll);
-// Matches with "/api/books/:id"
+// Matches with "/api/bookings/:id"
 router.route('/:id').get(findById).put(update).delete(remove);
 
 module.exports = router;

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import axios from 'axios';
 import firebase from '../firebase';
-import Booking from './Booking';
-import myBackgroundImage from './pictures/peddlecutz4.jpg';
+
+// import Booking from './Booking';
+
+import myBackgroundImage from './pictures/peddlecutz5.png';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,
@@ -19,20 +22,14 @@ export default class Landing extends Component {
 	}
 
 	componentDidMount() {
-		firebase.auth().onAuthStateChanged((user) => {
-			if (user) {
-				this.setState({
-					user: user
-				});
-
-				this.listAppointments();
-			} else {
-				this.setState({
-					user: null
-				});
-				this.props.history.push('/login');
-			}
-		});
+		axios
+			.get('https://api/bookings')
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	listAppointments = () => {

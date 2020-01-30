@@ -14,6 +14,7 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static('public'));
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Bookings');
 // Routes
 // ======
 const bookings = require('./routes/api/bookings');
