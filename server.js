@@ -2,7 +2,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var logger = require('morgan');
+const routes = require("./routes");
 var path = require('path');
+const Port = Process.env.PORT || 3000,
 
 var app = express();
 

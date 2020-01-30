@@ -3,6 +3,7 @@ import firebase from '../firebase';
 import Navbar from './Navbar';
 import myBackgroundImage from './pictures/peddlecutz5.png';
 import axios from 'axios';
+import Bookings from '../pages/Landing';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,
