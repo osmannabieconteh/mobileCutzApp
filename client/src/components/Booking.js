@@ -3,7 +3,6 @@ import firebase from '../firebase';
 import Navbar from './Navbar';
 import myBackgroundImage from './pictures/peddlecutz5.png';
 import axios from 'axios';
-import Bookings from '../pages/Landing';
 
 const styles = {
 	backgroundImage: `url(${myBackgroundImage})`,
@@ -48,8 +47,7 @@ export default class Booking extends Component {
 		};
 
 		axios.post('/api/bookings/', newAppointment).then((res) => console.log(res)).catch((err) => console.log(err));
-		// figure out why the proxy isnt working.
-		// Its making the request on port 3000 when it should be 8080.
+
 		this.props.history.push('/');
 	};
 
